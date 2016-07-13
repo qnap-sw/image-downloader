@@ -97,13 +97,13 @@ class PictureCrawler(object):
                     options.color_type = self.ColorTypeIndex[self.ColorType]
             if self.AspectRatio != 'any':
                 options.aspect_ratio = self.AspectRatioIndex[self.AspectRatio]
-            if self.FileType != 'any':
+            if self.FileType != 'any' and self.FileType != "":
                 options.file_type = self.FileTypeIndex[self.FileType]
         results = google.search_images(self.Query, options, num_images=int(self.Limit))
         return results
 
     def handle_download(self, search_results):
-        folder_name = time.strftime("%Y%m%d%H:%M:%S", time.localtime())
+        folder_name = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
         save_dir = self.DownloadPath + "/" + folder_name
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
