@@ -16,7 +16,7 @@ git clone https://github.com/qnap-sw/Google-Search-API.git
 or browser download and unzip
 
 step 5: copy unzip Google-Search-API/google/modules/images.py to site-packages/modules/images.py
-mac site-package location: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/google/modules/images.py
+mac site-package location: /Users/${username}/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/google/modules/images.py
 
 step 6:
 key command for terminal:  
