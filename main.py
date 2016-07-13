@@ -23,7 +23,7 @@ class MainApp(object):
         crawler.Limit = task[3]
         crawler.ImageSize = task[4]
         crawler.AspectRatio = task[5]
-        crawler.Color = task[6]
+        crawler.ColorType = task[6]
         crawler.ImageType = task[7]
         crawler.FileType = task[8]
         if task[11] != "":
@@ -36,7 +36,7 @@ class MainApp(object):
         crawler.SearchLog['Limit'] = crawler.Limit
         crawler.SearchLog['Aspect ratio'] = crawler.AspectRatio
         crawler.SearchLog['Image size'] = crawler.ImageSize
-        crawler.SearchLog['Color in image'] = crawler.Color
+        crawler.SearchLog['Color in image'] = crawler.ColorType
         crawler.SearchLog['Image type'] = crawler.ImageType
         crawler.SearchLog['File type'] = crawler.FileType
         if task[11] != "":
@@ -51,4 +51,4 @@ class MainApp(object):
         else:
             print 'unknown action'
 
-    print "finish all task....."
+    print "Complete all tasks....."
