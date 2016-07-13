@@ -75,7 +75,9 @@ class PictureCrawler(object):
             'Query': self.Query,
             'Limit': self.Limit,
             'Aspect ratio': self.AspectRatio,
+            'Image size': self.ImageSize,
             'Color in image': self.ColorType,
+            'Image type': self.ImageType,
             'File type': self.FileType,
             'Download path': self.DownloadPath
         }
@@ -109,4 +111,4 @@ class PictureCrawler(object):
             os.makedirs(save_dir)
         images.fast_download(search_results, path=save_dir, threads=12)
         with open(save_dir + '/search_record.log', 'w') as outfile:
-            json.dump(self.SearchLog, outfile)
+            json.dump(self.SearchLog, outfile, sort_keys=True, indent=4, separators=(',', ': '))

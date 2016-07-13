@@ -26,8 +26,21 @@ class MainApp(object):
         crawler.Color = task[6]
         crawler.ImageType = task[7]
         crawler.FileType = task[8]
-        if task[9] != "":
-            crawler.DownloadPath = task[9]
+        if task[11] != "":
+            crawler.DownloadPath = task[11]
+
+        # set log information
+        crawler.SearchLog['Action'] = crawler.Action
+        crawler.SearchLog['Search engine'] = crawler.SearchEngine
+        crawler.SearchLog['Query'] = crawler.Query
+        crawler.SearchLog['Limit'] = crawler.Limit
+        crawler.SearchLog['Aspect ratio'] = crawler.AspectRatio
+        crawler.SearchLog['Image size'] = crawler.ImageSize
+        crawler.SearchLog['Color in image'] = crawler.Color
+        crawler.SearchLog['Image type'] = crawler.ImageType
+        crawler.SearchLog['File type'] = crawler.FileType
+        if task[11] != "":
+            crawler.SearchLog['Download path'] = crawler.DownloadPath
 
         if crawler.Action.startswith('#'):
             print crawler.Action + 'is inactive'
