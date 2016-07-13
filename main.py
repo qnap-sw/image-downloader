@@ -15,8 +15,7 @@ from Crawler import PictureCrawler
 class MainApp(object):
 
     # need to check action
-    print csv_data
-    for task in csv_data[3:]:
+    for task in csv_data[2:]:
         crawler = PictureCrawler()
         crawler.Action = task[0]
         crawler.SearchEngine = task[1]
@@ -33,7 +32,10 @@ class MainApp(object):
         if crawler.Action.startswith('#'):
             print crawler.Action + 'is inactive'
         elif crawler.Action == 'image.query.download':
+            results = crawler.handle_search()
             print "run task: " + "search " + crawler.Query + "....."
-            crawler.handle_download(crawler.handle_search())
+            crawler.handle_download(results)
         else:
             print 'unknown action'
+
+    print "finish all task....."
