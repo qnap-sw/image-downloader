@@ -21,7 +21,7 @@ git clone https://github.com/qnap-sw/image-downloader.git
 Usage
 ------------
 ```
-cd image-downloader-master
+cd image-downloader
 python main.py [csv name]
 ```
 
