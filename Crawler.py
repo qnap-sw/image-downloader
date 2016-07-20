@@ -8,6 +8,7 @@ class PictureCrawler(object):
 
     # search conditions
     def __init__(self):
+        self.CsvIndex = None
         self.Action = 'image.query.download'
         self.SearchEngine = 'google'
         self.Query = None
@@ -105,10 +106,14 @@ class PictureCrawler(object):
         return results
 
     def handle_download(self, search_results):
-        folder_name = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+        # folder_name = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+        folder_name = str(self.CsvIndex)
+        for key, value in self.SearchLog.items():
+            if key != 'Download path' and self.SearchLog[key] != 'any' and self.SearchLog[key] != "" and self.SearchLog[key] is not None:
+                folder_name += "_" + str(self.SearchLog[key])
         save_dir = self.DownloadPath + "/" + folder_name
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
-        images.fast_download(search_results, path=save_dir, threads=12)
+        images.fast_download(search_results, path=save_dir, threads=5)
         with open(save_dir + '/search_record.log', 'w') as outfile:
             json.dump(self.SearchLog, outfile, sort_keys=True, indent=4, separators=(',', ': '))

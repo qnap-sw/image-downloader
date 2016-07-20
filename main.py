@@ -15,8 +15,9 @@ from Crawler import PictureCrawler
 class MainApp(object):
 
     # need to check action
-    for task in csv_data[2:]:
+    for index, task in enumerate(csv_data[2:]):
         crawler = PictureCrawler()
+        crawler.CsvIndex = index + 3
         crawler.Action = task[0]
         crawler.SearchEngine = task[1]
         crawler.Query = task[2]
@@ -25,7 +26,8 @@ class MainApp(object):
         crawler.AspectRatio = task[5]
         crawler.ColorType = task[6]
         crawler.ImageType = task[7]
-        crawler.FileType = task[8]
+        if task[8] != "":
+            crawler.FileType = task[8]
         if task[11] != "":
             crawler.DownloadPath = task[11]
 
