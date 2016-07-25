@@ -114,6 +114,6 @@ class PictureCrawler(object):
         save_dir = self.DownloadPath + "/" + folder_name
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
-        images.fast_download(search_results, path=save_dir, threads=5)
+        images.fast_download(search_results, path=save_dir, threads=12)
         with open(save_dir + '/search_record.log', 'w') as outfile:
             json.dump(self.SearchLog, outfile, sort_keys=True, indent=4, separators=(',', ': '))
