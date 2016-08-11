@@ -4,12 +4,16 @@ Download multiple Google search images via a csv condition
 ## Requirement
 easy_install ,pip , git ,Firefox
 
-Please note that you should also install **Firefox browser** in order to use images search.
-Image search uses the selenium & the Firefox driver, therefor you MUST have [Firefox installed](https://www.mozilla.org/en-US/firefox/new/) to use it.
+Please note that you should also install PhantomJS (headless browser) in order to use images search.
+Image search uses the selenium & the phantomjs driver, therefore you MUST have [PhantomJS installed](https://www.npmjs.com/package/phantomjs) to use it.
+
 
 Installation
 ------------
-
+install phantomjs
+```
+sudo npm install -g phantomjs
+```
 install python site-package Google-Search-API
 ```
 pip install git+https://github.com/qnap-sw/Google-Search-API.git
