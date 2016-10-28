@@ -1,0 +1,45 @@
+# Action,Search engine,Query,Limit,Image size,Aspect ratio,Color in image,Type of image,File type,Region (opt),Site or domain (opt),Download path
+"# image.query.download
+image.search-by-image.download
+web.pdf.download
+
+if the action starts with pound, it is a comment","e.g.,
+
+google","e.g.
+* hello kitty
+* ""hello kitty""
+* hello OR kitty
+* -hello
+* hello site:edu","number of items to be downloaded
+
+e.g., 1000","any
+large
+medium
+icon
+...","any
+tall
+square
+wide
+panoramic","any
+full color
+black-white
+transparent
+color.red
+color.green
+...","any
+face
+photo
+clip-art
+line-drawing
+animated","any
+jpg
+gif
+png
+bmp
+svg
+webp
+ico",,"e.g.,
+.edu","e.g.,
+default
+<specified path>"
+image.query.download,google,qnap nas,101,any,any,any,any,,,,
